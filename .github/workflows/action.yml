@@ -31,9 +31,9 @@ jobs:
       - name: Run tests
         run: npm test
 
-      # Optionally, upload test results or other artifacts
+      # Upload test results using the updated version
       - name: Upload test results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: test-results
           path: test-results/
