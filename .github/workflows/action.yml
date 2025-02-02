@@ -31,10 +31,6 @@ jobs:
       - name: Run tests
         run: npm test
 
-      # Upload test results using the updated version
-      - name: Upload test results
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-results
-          path: test-results/
+      - name: 22f1000539@ds.study.iitm.ac.in
+        run: echo "Hello, world!"
 
