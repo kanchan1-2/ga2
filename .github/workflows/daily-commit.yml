@@ -1,0 +1,22 @@
+name: Daily Commit Workflow
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # This schedules the action to run daily at midnight UTC
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Add a commit with email 22f1000539@ds.study.iitm.ac.in
+        run: |
+          echo "Daily commit by scheduled workflow" > daily_commit.txt
+          git config --global user.email "22f1000539@ds.study.iitm.ac.in"
+          git config --global user.name "GitHub Actions"
+          git add daily_commit.txt
+          git commit -m "Automated daily commit"
+          git push
