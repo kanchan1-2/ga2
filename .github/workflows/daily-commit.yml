@@ -12,12 +12,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        with:
+          ref: main # Replace with your default branch name if it's not "main"
 
       - name: Add a commit with email 22f1000539@ds.study.iitm.ac.in
         run: |
-          echo "Daily commit by scheduled workflow" > daily_commit.txt
+          echo "Daily commit by scheduled workflow" >> daily_commit.txt
           git config --global user.email "22f1000539@ds.study.iitm.ac.in"
           git config --global user.name "GitHub Actions"
           git add daily_commit.txt
           git commit -m "Automated daily commit"
-          git push
+          git push origin main # Replace with your default branch name if it's not "main"
